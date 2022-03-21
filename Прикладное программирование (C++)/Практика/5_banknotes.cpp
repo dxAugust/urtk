@@ -1,19 +1,10 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
-template<typename T, size_t N>
-size_t size(const T(&)[N]) 
-{
-    return N;
-}
-
 int main()
 {
-	int arr[] = {50, 20, 10, 5, 1};
-    vector<int> banknotes(arr, arr+size(arr));
-	
+	int banknotes[] = {50, 20, 10, 5, 1};
 	
 	int n, num;
 	

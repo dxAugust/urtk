@@ -5,20 +5,27 @@ using namespace std;
 
 int main()
 {
-	unsigned int dec;
+	unsigned int x;
+	cin >> x;
+	
 	int count = 0;
 	
-	cin >> dec;
-	
-    for(int j = 0; dec > 0; j++)
-    {
-		if ((dec % 2) == 1)
+	int size = sizeof(unsigned int) * 8;
+
+	for (int i = 0; i < size; i++)
+	{
+		unsigned int dec = x >> i;
+		
+		if (!dec)
 		{
-			count += 1;
+			break;
+		} else {
+			if (dec & 1)
+			{
+				count += 1;
+			}
 		}
-	
-        dec /= 2;
-    }
+	}
     
     cout << count;
 	
