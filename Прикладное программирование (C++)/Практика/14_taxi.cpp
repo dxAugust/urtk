@@ -5,18 +5,18 @@ using namespace std;
 
 int main()
 {
-	int b1, b2, b3, res, need;
+	int car1, car2, car3, result, need;
 	
-	cin >> b1 >> b2 >> b3;
+	cin >> car1 >> car2 >> car3;
 	
-	need = (b1 + b2 + b3) / 3;
-	res = (abs(b1 - need) + abs(b2 - need) + abs(b3 - need)) / 2;
+	need = (car1 + car2 + car3) / 3;
+	result = (abs(car1 - need) + abs(car2 - need) + abs(car3 - need)) / 2;
 	
-	if (((b1 + b2 + b3) % 3) != 0)
+	if (((car1 + car2 + car3) % 3) != 0)
 	{
 		cout << "IMPOSSIBLE";
 	} else {
-		cout << res;
+		cout << result;
 	}
 	
 	return 0;

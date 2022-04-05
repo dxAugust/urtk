@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-	int n, topSum, rightSum, downSum, leftSum;
+	int n, topSum = 0, rightSum = 0, downSum = 0, leftSum = 0;
     cin >> n;
     
     int **array = new int *[n];

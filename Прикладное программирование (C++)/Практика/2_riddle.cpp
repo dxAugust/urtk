@@ -1,16 +1,17 @@
 #include <iostream>
 using namespace std;
 
-int main(){
-	int n;
+int main()
+{
+	int number;
 	
-	cin >> n;
+	cin >> number;
 	
-	if (n % 2 == 0 or n <= 1)
+	if (number % 2 == 0 or number <= 1)
 	{
 		cout << "Wrong number";
 	} else {
-		cout << (n * n) - (n - 1) * 2;
+		cout << (number * number) - (number - 1) * 2;
 	}
 	return 0;
 }

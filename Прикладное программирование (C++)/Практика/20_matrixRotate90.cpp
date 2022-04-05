@@ -1,25 +1,5 @@
 #include <iostream>
 
-int** rotate90ByClockwise(int **array, int size)
-{
-	int previous = 0;
-	
-	for(int i = 0; i < size / 2; i++) 
-	{
-        for(int j = i; j < size - i - 1; j++) 
-		{
-			previous = array[i][j];
-
-            array[i][j] = array[size - 1 - j][i];
-            array[size - 1 - j][i] = array[size - 1 - i][size - 1 - j];
-            array[size - 1 - i][size - 1 - j] = array[j][size - 1 - i];
-            array[j][size - 1 - i] = previous;
-		}
-	}
-	
-	return array;
-}
-
 using namespace std;
 
 int main()
@@ -40,8 +20,19 @@ int main()
             cin >> array[i][j];
         }
     }
-    
-    array = rotate90ByClockwise(array, sizeofArray);
+	
+	for(int i = 0; i < sizeofArray / 2; i++) 
+	{
+        for(int j = i; j < sizeofArray - i - 1; j++) 
+		{
+			previous = array[i][j];
+
+            array[i][j] = array[sizeofArray - 1 - j][i];
+            array[sizeofArray - 1 - j][i] = array[sizeofArray - 1 - i][sizeofArray - 1 - j];
+            array[sizeofArray - 1 - i][sizeofArray - 1 - j] = array[j][sizeofArray - 1 - i];
+            array[j][sizeofArray - 1 - i] = previous;
+		}
+	}
     
     for(int i = 0; i < sizeofArray; i++) 
 	{

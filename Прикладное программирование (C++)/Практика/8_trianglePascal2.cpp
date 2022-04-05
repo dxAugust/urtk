@@ -2,27 +2,31 @@
 
 using namespace std;
  
+void pascal(int number) 
+{
+    int currentElement = 0, countRows = 0;
+    
+    for (int countRows = 0; countRows < number; countRows++)
+    {
+    	currentElement = 1;
+	    cout << currentElement;
+	    
+	    for (int i = 1; i <= countRows; i++) 
+		{
+	        currentElement *= (countRows - i + 1);
+	        currentElement /= i;
+	        cout << " " << currentElement;
+	    }
+	    cout << endl;
+	}
+} 
+
 int main()
 {
-	int n = 0;	
-	cin >> n;
-	
-    int arr[n][n];
- 
-    for (int row = 0; row < n; row++)
-    {
-        for (int i = 0; i <= row; i++)
-        {
-	        if (row == i || i == 0)
-	        {
-	        	arr[row][i] = 1;
-			} else {
-				arr[row][i] = arr[row - 1][i - 1] + arr[row - 1][i];
-			}
-	        cout << arr[row][i] << " ";
-        }
-        cout << "\n";
-    }
+	int number;
+    cin >> number;
+    
+    pascal(number);
     
     return 0;
 }

@@ -73,18 +73,17 @@ void quickSort(int numbers[], int left, int right)
 
 int main()
 {
-	setlocale(LC_ALL, "Russian");
 	srand(time(NULL));
 	
 	int countofStones;
-	cout << "Введите кол-во камней: ";
+	cout << "Enter count of Stones: ";
 	cin >> countofStones;
 
 	int* stoneWeights = new int[countofStones];
 	
 	for (int i = 0; i < countofStones; i++)
 	{
-		stoneWeights[i] = rand() % 1000;
+		stoneWeights[i] = rand() % 101;
 	}
 
 	quickSort(stoneWeights, 0, countofStones - 1);
@@ -113,14 +112,22 @@ int main()
 		}
 	}
 
-	cout << "Первая куча: ";
+	cout << "First heap: ";
 	showVector(firstHeap, stonesInFirstHeap);
-	cout << "Масса первой кучи: " << weightOnFirstHeap << endl << endl;
+	cout << "Weight of first heap: " << weightOnFirstHeap << endl << endl;
 
-	cout << "Вторая куча: ";
+	cout << "Second heap: ";
 	showVector(secondHeap, stonesInSecondHeap);
-	cout << "Масса второй кучи: " << weightOnSecondHeap << endl << endl;
+	cout << "Weight of second heap: " << weightOnSecondHeap << endl << endl;
+	
+	double ratio = (double)(weightOnFirstHeap / weightOnSecondHeap);
+	if (ratio > 2 || ratio < 0.5)
+	{
+		cout << "Weights of heaps are different more than 2 times";
+	}
 
+
+	/* cleaning up the memory */
 	delete[] stoneWeights;
 	delete[] firstHeap;
 	delete[] secondHeap;
