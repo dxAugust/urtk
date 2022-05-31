@@ -67,9 +67,8 @@ bool isValidIP(string ip)
 
 int main()
 {
-	
 	bool valid = true;
-	
+
 	string ip;
 	getline(cin, ip);
 	int first = 0, i = 0;
@@ -98,3 +97,4 @@ int main()
 	
 	return 0;
 }
+
